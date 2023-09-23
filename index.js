@@ -7,10 +7,12 @@ const PORT = process.env.PORT
 
 const app = express();
 const router = require('./routes/post');
+const authRoutes = require('./routes/auth');
 
 // Middlewares
 app.use(express.json());
 app.use(router);
+app.use(authRoutes)
 
 // DB Connect
 connectDB(db);
